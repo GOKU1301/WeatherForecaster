@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .gif-container img {
+            width: 200px;
+            margin: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Weather</th>
+                <th>Temperature</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% weatherForecast.forEach(day => { %>
+                <tr>
+                    <td><%= day.date %></td>
+                    <td><%= day.weatherType %></td>
+                    <td><%= day.temperature %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <div class="gif-container">
+        <% gifs.forEach(gif => { %>
+            <img src="<%= gif.images.original.url %>" alt="<%= gif.title %>">
+        <% }) %>
+    </div>
+</body>
+</html>
