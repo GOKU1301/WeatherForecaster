@@ -4,36 +4,47 @@
     <title>Weather and Gifs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqk1w2/knoG80kdk37iKL2pHOc5JnQ7izYI+sWJxOUCOi+NkTppeP4L9n5w/PFV1i5dN+CUw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-image: url('/mnt/data/image.png');
+            background-size: cover;
             text-align: center;
             margin-top: 50px;
-        }
-        h1 {
             color: #333;
         }
-        form {
+        .container {
             margin: 20px auto;
-            width: 50%;
-            background-color: #fff;
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.9); 
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        h1 {
+            color: black;
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 0;
+        }
+        form {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+            margin-top: 0;
         }
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #555;
+            color: #333;
         }
         input[type="text"] {
             width: calc(100% - 20px);
             padding: 8px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 5px;
         }
         button {
             background-color: #4CAF50;
@@ -46,22 +57,39 @@
             font-size: 16px;
             margin-top: 10px;
             cursor: pointer;
-            border-radius: 3px;
+            border-radius: 5px;
             transition: background-color 0.3s;
         }
         button:hover {
             background-color: #45a049;
         }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Welcome to the Weather Forecast Generator!</h1>
-    <form action="/weather" method="get">
-        <label for="lat">Latitude:</label>
-        <input type="text" id="lat" name="lat" required>
-        <label for="lon">Longitude:</label>
-        <input type="text" id="lon" name="lon" required>
-        <button type="submit">Get Weather and Gifs</button>
-    </form>
+    <div class="container">
+        <h1><i class="fa fa-cloud-sun-rain"></i> Welcome to the Weather Forecast Generator! <i class="fa fa-cloud-sun-rain"></i></h1>
+        <form action="/weather" method="get">
+            <label for="lat">Latitude:</label>
+            <input type="text" id="lat" name="lat" required>
+            <label for="lon">Longitude:</label>
+            <input type="text" id="lon" name="lon" required>
+            <button type="submit">Get Weather and Gifs</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        &#169; Devansh Sharma
+    </div>
 </body>
 </html>
